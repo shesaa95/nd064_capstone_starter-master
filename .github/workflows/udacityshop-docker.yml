@@ -32,14 +32,6 @@ jobs:
           push: true
           tags: asheshanr/frontend:latest
           
-      - name: Build and push productcatalogservice service
-        uses: docker/build-push-action@v2
-        with:
-          context: ./src/productcatalogservice
-          file: ./src/productcatalogservice/Dockerfile
-          platforms: linux/amd64
-          push: true
-          tags: asheshanr/productcatalogservice:latest
       
       - name: Build and push currencyservice service
         uses: docker/build-push-action@v2
@@ -58,3 +50,12 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: asheshanr/adservice:latest
+          
+      - name: Build and push productcatalogservice service
+        uses: docker/build-push-action@v2
+        with:
+          context: ./src/productcatalogservice
+          file: ./src/productcatalogservice/Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: asheshanr/productcatalogservice:latest
