@@ -23,7 +23,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push frontend service
+      - name: Build and push frontend
         uses: docker/build-push-action@v2
         with:
           context: ./src/frontend
@@ -33,7 +33,7 @@ jobs:
           tags: asheshanr/frontend:latest
           
       
-      - name: Build and push currencyservice service
+      - name: Build and push currencyservice
         uses: docker/build-push-action@v2
         with:
           context: ./src/currencyservice
@@ -42,7 +42,7 @@ jobs:
           push: true
           tags: asheshanr/currencyservice:latest
       
-      - name: Build and push adservice service
+      - name: Build and push adservice
         uses: docker/build-push-action@v2
         with:
           context: ./src/adservice
@@ -51,7 +51,7 @@ jobs:
           push: true
           tags: asheshanr/adservice:latest
           
-      - name: Build and push productcatalogservice service
+      - name: Build and push productcatalogservice
         uses: docker/build-push-action@v2
         with:
           context: ./src/productcatalogservice
